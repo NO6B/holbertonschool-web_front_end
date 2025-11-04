@@ -108,3 +108,7 @@ a:hover {
 a:active {
   background-color: var(--color-light-grey);
 }
+
+.footer {
+  padding: var(--footer-padding);
+}
