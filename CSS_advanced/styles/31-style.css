@@ -72,23 +72,26 @@ nav .nav-item {
   letter-spacing: var(--nav-item-letter-spacing);
   display: var(--nav-item-display);
   margin: var(--nav-item-margin);
-  background-color: var(--color-primary);
-  width: 100%;
 }
 
-nav .nav-link{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: var(--color-white);
-    width: 0;
-    height: 20%;
-    display: block;
-    padding: 0.5rem 1rem;
-    color: var(--nav-item-link-hover);
-    background-color: var(--color-primary);
-    width: 100%;
+nav .nav-link {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  width: 0;
+  height: 0.2rem;
+}
+
+nav .nav-item:hover .nav-link::before {
+  background-color: var(--color-primary);
+  width: 100%;
 }
 
 
@@ -127,7 +130,7 @@ nav .nav-link{
     --nav-item-letter-spacing: 0.04rem;
     --nav-item-display: inline-block;
     --nav-item-margin: 0 0 3rem 0;
-    --nav-item-link-hover: var(--color-primary);
+    --nav-item-link-hover: var(--color-white);
     --section-tagline-margin: 0;
     --button-display: var(inline-block);
     --button-padding: 1.5rem 3rem;
@@ -144,8 +147,6 @@ nav .nav-link{
     --header-logo-link-position: absolute;
     --header-logo-link-top: -1rem;
     --header-logo-link-left: 0;
-    --nav-item-link-hover: var(--color-white);
-
 }
 
 
@@ -224,7 +225,7 @@ ul.row {
 }
 
 .footer-address{
-    --text-color:color: var(--text-color);
+    color: var(--text-color);
 }
 
 
@@ -255,6 +256,13 @@ ul.row {
 
 .card-testimonial {
   text-align: center;
+}
+
+.card-testimonial .card-quote {
+  position: relative;
+}
+
+.card-testimonial .card-quote::before {
   content: "\201C";
   position: absolute;
   top: -4.5rem;
@@ -263,11 +271,6 @@ ul.row {
   font-size: 10rem;
   z-index: -1;
 }
-
-.card-testimonial .card-quote {
-  position: relative;
-}
-
 
 .card-testimonial .card-avatar {
   border-radius: 50%;
